@@ -57,8 +57,8 @@ Parameter position:
 
   5. **` reportLevel ` | [optional]**: This takes a numeric value of `0`, `1`, or `2`.
      - This is used against an array, ` ['Info', 'Warning', 'Error'] `.
-     - By default this is set to index ` 0 ` but if an error is passed in at parameter 1 and the error has a stack trace then this will automatically be change to index ` 2 `.
-     - Index ` 1 ` will only be used if entered as so.
+     - By default this is set to index ` 0 `['Info'] but if an error is passed in at parameter 1 and the error has a stack trace then this will automatically be change to index ` 2 `['Error'].
+     - Index ` 1 `['Warning'] will only be used if entered as so.
 
 
 ```javascript
