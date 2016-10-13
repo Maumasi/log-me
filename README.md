@@ -48,9 +48,13 @@ const log = require('log-me');
 When using your new tool, ` log `, there are a few parameters to play with:</br>
 Parameter position:
   1. **` error ` | [required]**: Capture an error stack trace commonly represented as ` err ` in node.
+
   2. **` filePath ` | [optional]**: While this is an optional parameter you should always set this to ` __filename ` whenever you call a ` log-me ` instance or else it will default to ` log-me `'s module file path.
+
   3. **` customMessage ` | [optional]**: This is a string value that will be used as the log message header.
+
   4. **` customDescription ` | [optional]**: This is a string value. The description should be used if the purpose for the log is more complex then can be described in a few words using the ` customMessage ` parameter.
+
   5. **` reportLevel ` | [optional]**: This takes a numeric value of `0`, `1`, or `2`.
      - This is used against an array, ` ['Info', 'Warning', 'Error'] `.
      - By default this is set to index ` 0 ` but if an error is passed in at parameter 1 and the error has a stack trace then this will automatically be change to index ` 2 `.
