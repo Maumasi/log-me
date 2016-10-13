@@ -20,7 +20,7 @@ try {
       rpLevel = reportType[2];
     }
 
-    const file = './node_modules/../logs/log.txt';
+    const file = './logs/log.txt';
     const data = fs.readFileSync(file);// hold existing contents into data
     const fd = fs.openSync(file, 'w+');
 
@@ -107,6 +107,7 @@ try {
 } catch (e) {
   stream.write(e);
   stream.write('log-me failed');
-} finally {
-  stream.write('did you make `./log/log.txt` at the root level of your App?');
+  stream.write(`Did you add ${clc.cyan('./logs/log.txt')} at the root directory level? If not just add a new directory
+    If not, just make a new directory in your App's root directory called ${clc.cyan('logs')} and create a new file called ${clc.cyan('log.txt')}
+    then delete the ${clc.cyan('node_modules')} directory and re-install dependencies with ${clc.cyan('npm install')}`);
 }
