@@ -1,6 +1,6 @@
 {
   "name": "@maumasi/log-me",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple logging tool that formats log entries and terminal log output when in debigging mode.",
   "main": "index.js",
   "scripts": {
