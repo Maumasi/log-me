@@ -107,8 +107,9 @@ log(null, __filename,
 );
 
 ```
+___
 
-### DEBUG mode
+## DEBUG mode
 While ` log-me ` will continuously write to the ` ROOT/logs/log.txt ` file, but if you want see logs being output to the terminal then you'll have to turn on the **DEBUG** mode. To turn on **DEBUG** mode you'll have to set the DEBUG environment variable.
 
 The best way to do this is to set `DEBUG=true` in the terminal. If you have a server script that runs your App at the `ROOT/` directory level then you call just past in the following commands, assuming that you server script is called `server.js`.
