@@ -2,6 +2,7 @@
 const util = require('util');
 const fs = require('fs');
 const clc = require('cli-color');
+const stream = process.stdout;
 
 try {
 
@@ -104,8 +105,8 @@ try {
     }
   };
 } catch (e) {
-  process.stdout(e);
-  process.stdout('log-me failed');
+  stream.write(e);
+  stream.write('log-me failed');
 } finally {
-  process.stdout('did you make `./log/log.txt` at the root level of your App?');
+  stream.write('did you make `./log/log.txt` at the root level of your App?');
 }
