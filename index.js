@@ -110,4 +110,7 @@ try {
   stream.write(`Did you add ${clc.cyan('./logs/log.txt')} at the root directory level? If not just add a new directory
     If not, just make a new directory in your App's root directory called ${clc.cyan('logs')} and create a new file called ${clc.cyan('log.txt')}
     then delete the ${clc.cyan('node_modules')} directory and re-install dependencies with ${clc.cyan('npm install')}`);
+  stream.write('If `./logs/log.txt` does not exist in root directory past the following lines into the terminal from the location of you App\'s ROOT directory:');
+  stream.write(`${clc.greenBright('mkdir logs')}`);
+  stream.write(`${clc.greenBright('touch logs/log.txt')}`);
 }

@@ -35,9 +35,19 @@ $ npm i --save-dev log-me
 
 ```
 </br>
+
+After installing ` log-me ` you **MUST** create a new ` logs ` directory and ` log.txt ` inside of that new directory.
+```bash
+
+$ cd ROOT/
+$ mkdir logs
+$ touch logs/log.txt
+
+```
 ___
 ## Usage
 
+### Code examples
 At the top of a file you are going to use an instance of ` log-me ` set to a ` const `:
 ```javascript
 
@@ -57,20 +67,22 @@ Parameter position:
 
   5. **` reportLevel ` | [optional]**: This takes a numeric value of `0`, `1`, or `2`.
      - This is used against an array, ` ['Info', 'Warning', 'Error'] `.
-     - By default this is set to index ` 0 `['Info'] but if an error is passed in at parameter 1 and the error has a stack trace then this will automatically be change to index ` 2 `['Error'].
+     - By default this is set to index ` 0 `['Info'], but if an error is passed in at parameter 1 and the error has a stack trace then this will automatically be change to index ` 2 `['Error'].
      - Index ` 1 `['Warning'] will only be used if entered as so.
 
-
 ```javascript
+
 // extend the `log-me` module to this file
 const log = require('log-me');
+
 
 // parameters
 log(err, filePath = __filename, customMessage = 'none', customDescription = 'none', reportLevel = 0);
 
+
 // only log the stack trace
 danceMonkeyDance(err, dance) {
-  // ... some code
+  // ... some code ...
   if (err) {
     log(err, __filename);
   }
@@ -80,13 +92,53 @@ danceMonkeyDance(err, dance) {
 // if there's no error to pass in but you want to log an event just set the first parameter to `null`
 log(null, __filename,
   'Header for custom log message',
-  'A more descriptive explanation if you need one.');
+  'A more descriptive explanation for the reason I put a log here.');
+
 
 // change the reportLevel to index of 'Warning'
 log(null, __filename,
   'An unexpected event that could be a problem later',
-  'A well deserved explanation as to what you suspect triggered this `Warning` log',
+  'A well deserved explanation as to what you suspect triggered this `Warning` log.',
   1 // <-------- index of `Warning` status
 );
 
 ```
+
+### DEBUG mode
+While ` log-me ` will continuously write to the ` ROOT/logs/log.txt ` file, but if you want see logs being output to the terminal then you'll have to turn on the **DEBUG** mode. To turn on **DEBUG** mode you'll have to set the DEBUG environment variable.
+
+The best way to do this is to set `DEBUG=true` in the terminal. If you have a server script that runs your App at the `ROOT/` directory level then you call just past in the following commands, assuming that you server script is called `server.js`.
+
+```bash
+
+$ cd ROOT/
+$ DEBUG=true node server.js
+
+```
+</br>
+
+Then of course, to exit DEBUG mode you'll have to stop the server.
+```bash
+
+$ cd ROOT/
+$ ^C
+
+```
+**Note:**
+To enter ` ^C ` you just to press `control` and `c` at the same time.
+</br>
+
+An example log output to the terminal would look like this:
+```bash
+
+Log Report: Info
+created at: Wed Oct 12 2016 21:42:28 GMT-0400 (EDT)
+report type: Info
+custom message: Server Active
+custom description: Server running on port 3000
+file path: http://www.localhost:3000/server.js
+stack trace: null
+
+```
+The only exception to this example out put is that it would accually be colored text for better contrast
+</br>
