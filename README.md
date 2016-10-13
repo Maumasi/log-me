@@ -133,6 +133,8 @@ $ ^C
 To enter ` ^C ` you just to press `control` and `c` at the same time.
 </br>
 
+
+### Example output
 An example log output to the terminal would look like this:
 ```
 
