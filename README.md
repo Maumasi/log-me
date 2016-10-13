@@ -17,7 +17,9 @@ When reviewing this package documentation we're going to stage a couple basic ou
   - [How to setup an environmental variables file] (https://medium.com/@rafaelvidaurre/managing-environment-variables-in-node-js-2cb45a55195f#.41s7ws32x)
   - [How to set environment variables in the terminal] (http://stackoverflow.com/questions/9198310/how-to-set-node-env-to-production-development-in-os-x)
 </br>
+
 ___
+
 ## Install
 
 To install as a dependency:
@@ -46,6 +48,7 @@ $ touch logs/log.txt
 
 ```
 ___
+
 ## Usage
 
 ### Code examples
