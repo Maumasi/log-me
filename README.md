@@ -16,6 +16,7 @@ When reviewing this package documentation we're going to stage a couple basic ou
 - We're also going to assume that you already know what node environment variables are, if you don't here are a couple articles to get you up to speed:
   - [How to setup an environmental variables file] (https://medium.com/@rafaelvidaurre/managing-environment-variables-in-node-js-2cb45a55195f#.41s7ws32x)
   - [How to set environment variables in the terminal] (http://stackoverflow.com/questions/9198310/how-to-set-node-env-to-production-development-in-os-x)
+</br>
 ___
 ## Install
 
