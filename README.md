@@ -140,9 +140,9 @@ created at: Wed Oct 12 2016 21:42:28 GMT-0400 (EDT)
 report type: Info
 custom message: Server Active
 custom description: Server running on port 3000
-file path: http://www.localhost:3000/server.js
+file path: ROOT/server.js
 stack trace: null
 
 ```
-The only exception to this example out put is that it would accually be colored text for better contrast
+The only exception to this example out put is that it would actually be colored text for better contrast
 </br>
