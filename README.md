@@ -3,39 +3,23 @@
 **log-me** is a simple logging tool you can use to log events to a log file within your project. You can think of this as a more powerful ` console.log() ` except you can turn this one off when you don't need logs to the terminal riddled all over the place.
 </br>
 
+### Important:
+This package was writen in ` node v6.7.0 `
+
+### Notes:
+When reviewing this package documentation we're going to stage a couple basic outlines:
+
+- We're going to just call the root directory of your app ` ROOT `
+
+- We're also going to assume that you already know what node environment variables are, if you don't here are a couple articles to get you up to speed:
+  - [How to setup an environmental variables file] (https://medium.com/@rafaelvidaurre/managing-environment-variables-in-node-js-2cb45a55195f#.41s7ws32x)
+  - [How to set environment variables in the terminal] (http://stackoverflow.com/questions/9198310/how-to-set-node-env-to-production-development-in-os-x)
 
 
-## Run in **DEBUG** mode
-
-Wherever you utilize **log-me** in your code it will always log to the ./logs/log.txt file so you don't have to worry about missing an event in your App but the DEBUG mode can be turned on or off.
-</br>
-
-To run in debug mode enter the commands below in the terminal:
-
+## Install
+To install as a project dependency:
 ```bash
 
-$ cd ROOT/
-$ DEBUG=true node server.js
+$ cd
 
 ```
-</br>
-
-To exit DEBUG mode you'll have to stop the server and start up normally, without setting the environmental variable ``` DEBUG ```.
-</br>
-```bash
-
-$ cd ROOT/
-
-```
-</br>
-To stop the server type ``` control + ^C ```
-</br>
-
-You can enter the following commands in the terminal to run the API normally:
-```bash
-
-$ cd ROOT/
-$ node server.js
-
-```
-</br>

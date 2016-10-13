@@ -1,7 +1,7 @@
 {
   "name": "log-me",
   "version": "1.0.4",
-  "description": "A simple logging tool that formats log entries and terminal log output when in debigging mode.",
+  "description": "A simple logging and debugging tool that formats log entries and terminal log output.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
