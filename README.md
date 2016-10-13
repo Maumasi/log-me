@@ -1,6 +1,6 @@
 # log-me
 </br>
-**log-me** is a simple logging tool you can use to log events to a log file within your project. You can think of this as a more powerful ` console.log() ` except you can turn this one off when you don't need logs to the terminal riddled all over the place.
+**log-me** is a simple logging tool you can use to log events to a log file within your project. You can think of this as a more powerful ` console.log() ` except you can turn this one off when you don't need logs riddled all over the place in the terminal.
 </br>
 
 ### Important:
