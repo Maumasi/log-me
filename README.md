@@ -129,7 +129,7 @@ To enter ` ^C ` you just to press `control` and `c` at the same time.
 </br>
 
 An example log output to the terminal would look like this:
-```bash
+```
 
 Log Report: Info
 created at: Wed Oct 12 2016 21:42:28 GMT-0400 (EDT)
