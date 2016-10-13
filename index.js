@@ -20,7 +20,7 @@ try {
       rpLevel = reportType[2];
     }
 
-    const file = './logs/log.txt';
+    const file = './node_modules/../logs/log.txt';
     const data = fs.readFileSync(file);// hold existing contents into data
     const fd = fs.openSync(file, 'w+');
 
