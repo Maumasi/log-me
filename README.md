@@ -74,7 +74,7 @@ Parameter position:
      - By default this is set to index ` 0 `['Info'], but if an error is passed in at parameter 1 and the error has a stack trace then this will automatically be change to index ` 2 `['Error'].
      - Index ` 1 `['Warning'] will only be used if entered as so.
 
-[code language="javascript"]
+```javascript
 
 // extend the `log-me` module to this file
 const log = require('log-me');
@@ -106,7 +106,7 @@ log(null, __filename,
   1 // <-------- index of `Warning` status
 );
 
-[/code]
+```
 
 ### DEBUG mode
 While ` log-me ` will continuously write to the ` ROOT/logs/log.txt ` file, but if you want see logs being output to the terminal then you'll have to turn on the **DEBUG** mode. To turn on **DEBUG** mode you'll have to set the DEBUG environment variable.
