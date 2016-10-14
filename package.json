@@ -1,6 +1,6 @@
 {
   "name": "log-me",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple logging and debugging tool that formats log entries and terminal log output.",
   "main": "/src/index.js",
   "scripts": {
