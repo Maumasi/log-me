@@ -1,6 +1,6 @@
 {
   "name": "log-me",
-  "version": "1.0.10",
+  "version": "1.0.8",
   "description": "A simple logging and debugging tool that formats log entries and terminal log output.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "author": "maumasi",
   "license": "MIT",
   "bin": {
-    "log-me": "./src/log-me.js"
+    "log-me": "index.js"
   },
   "engine": {
     "node": ">=6.7.0"
