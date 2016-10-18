@@ -31,14 +31,6 @@ $ npm i --save log-me
 
 ```
 </br>
-To install as a dev dependency:
-```bash
-
-$ cd ROOT/
-$ npm i --save-dev log-me
-
-```
-</br>
 
 After installing ` log-me ` you **MUST** create a new ` logs ` directory and ` log.txt ` inside of that new directory.
 ```bash
