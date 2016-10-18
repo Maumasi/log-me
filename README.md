@@ -1,4 +1,5 @@
 # log-me
+[ ![Codeship Status for Maumasi/log-me](https://app.codeship.com/projects/14dc3950-76fc-0134-4753-66e71ebe4071/status?branch=master)](https://app.codeship.com/projects/179752)
 </br>
 **log-me** is a simple logging tool you can use to log events to a log file within your project. You can think of this as a more powerful ` console.log() ` except you can turn this one off when you don't need logs riddled all over the place in the terminal.
 </br>
