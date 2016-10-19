@@ -1,7 +1,7 @@
 # log-me
 [ ![Codeship Status for Maumasi/log-me](https://app.codeship.com/projects/14dc3950-76fc-0134-4753-66e71ebe4071/status?branch=master)](https://app.codeship.com/projects/179752)
 </br>
-**log-me** is a simple logging tool you can use to log events to a log file within your project. You can think of this as a more powerful ` console.log() ` except you can turn this one off when you don't need logs riddled all over the place in the terminal.
+**log-me** is a simple logging tool you can use to log events to a console. You can think of this as a more powerful ` console.log() ` which gives more robust information about the events happening in the core functionality.
 </br>
 
 ### Important:
@@ -31,16 +31,6 @@ $ npm i --save log-me
 
 ```
 </br>
-
-After installing ` log-me ` you **MUST** create a new ` logs ` directory and ` log.txt ` inside of that new directory.
-```bash
-
-$ cd ROOT/
-$ mkdir logs
-$ touch logs/log.txt
-
-```
-___
 
 ## Usage
 
@@ -103,7 +93,6 @@ log(null, __filename,
 ___
 
 ## DEBUG mode
-While ` log-me ` will continuously write to the ` ROOT/logs/log.txt ` file, but if you want see logs being output to the terminal then you'll have to turn on the **DEBUG** mode. To turn on **DEBUG** mode you'll have to set the DEBUG environment variable.
 
 The best way to do this is to set `DEBUG=true` in the terminal. If you have a server script that runs your App at the `ROOT/` directory level then you call just past in the following commands, assuming that you server script is called `server.js`.
 

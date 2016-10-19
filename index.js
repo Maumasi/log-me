@@ -1,9 +1,7 @@
 
 const util = require('util');
-const fs = require('fs');
 const clc = require('cli-color');
-const stream = process.stdout;
-
+const stream = console;
 try {
 
   module.exports = (
@@ -19,24 +17,6 @@ try {
     if (error) {
       rpLevel = reportType[2];
     }
-
-    const file = './logs/log.txt';
-    const data = fs.readFileSync(file);// hold existing contents into data
-    const fd = fs.openSync(file, 'w+');
-
-    const logData = new Buffer(
-  `created at: ${new Date()}
-  report type: ${rpLevel}
-  custom message: ${customMessage}
-  custom description: ${customDescription}
-  file path: ${filePath}
-  stack trace: ${util.inspect(error) || null}
-  \n`);
-
-    fs.writeSync(fd, logData, 0, logData.length);// write new data
-
-    fs.writeSync(fd, data, 0, data.length);// append old data
-    fs.close(fd);
 
     // build console version of log report
 
@@ -75,6 +55,9 @@ try {
       case 'Warning':
         reportTypeTxt = clc.bold(clc.yellowBright(rpLevel));
         break;
+      case 'Error':
+        reportTypeTxt = clc.bold(clc.redBright(rpLevel));
+        break;
       default:
         reportTypeTxt = clc.bold(logHeadColor(rpLevel));
     }
@@ -89,28 +72,31 @@ try {
     const stackTraceColor =
     `${clc.bold('stack trace')}: ${util.inspect(error) || null}`;
 
-    const stream = process.stdout;
+    const messageBody = `\n
+      ${logHead}
+      ${createdAtColor}
+      ${reportTypeColor}
+      ${customMessageColor}
+      ${customDescriptionColor}
+      ${filePathColor}
+      ${stackTraceColor}
+    \n`;
+
     if (process.env.DEBUG) {
-      stream.write(
-  `\n
-  ${logHead}
-  ${createdAtColor}
-  ${reportTypeColor}
-  ${customMessageColor}
-  ${customDescriptionColor}
-  ${filePathColor}
-  ${stackTraceColor}
-  \n`
-      );
+      switch (rpLevel) {
+        case "Info":
+          stream.log(messageBody);
+        break;
+        case "Warning":
+          stream.warn(messageBody);
+        break;
+        case "Error":
+          stream.error(messageBody);
+        break;
+      }
     }
   };
 } catch (e) {
-  stream.write(e);
-  stream.write('log-me failed');
-  stream.write(`Did you add ${clc.cyan('./logs/log.txt')} at the root directory level? If not just add a new directory
-    If not, just make a new directory in your App's root directory called ${clc.cyan('logs')} and create a new file called ${clc.cyan('log.txt')}
-    then delete the ${clc.cyan('node_modules')} directory and re-install dependencies with ${clc.cyan('npm install')}`);
-  stream.write('If `./logs/log.txt` does not exist in root directory past the following lines into the terminal from the location of you App\'s ROOT directory:');
-  stream.write(`${clc.greenBright('mkdir logs')}`);
-  stream.write(`${clc.greenBright('touch logs/log.txt')}`);
+  stream.error(e);
+  stream.error('log-me failed');
 }
