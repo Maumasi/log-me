@@ -5,7 +5,7 @@
 </br>
 
 ### Important:
-This package was writen in ` node v6.7.0 `
+This package was written in ` node v6.7.0 `
 
 ### Notes:
 When reviewing this package documentation we're going to stage a couple basic outlines:
@@ -42,7 +42,7 @@ const log = require('log-me');
 
 ```
 
-When using your new tool, ` log `, there are a few parameters to play with:</br>
+When using your new tool, ` log.print `, there are a few parameters to play with:</br>
 Parameter position:
   1. **` error ` | [required]**: Capture an error stack trace commonly represented as ` err ` in node.
 
@@ -64,26 +64,26 @@ const log = require('log-me');
 
 
 // parameters
-log(err, filePath = __filename, customMessage = 'none', customDescription = 'none', reportLevel = 0);
+log.print(err, filePath = __filename, customMessage = 'none', customDescription = 'none', reportLevel = 0);
 
 
 // only log the stack trace
 danceMonkeyDance(err, dance) {
   // ... some code ...
   if (err) {
-    log(err, __filename);
+    log.print(err, __filename);
   }
 }
 
 
 // if there's no error to pass in but you want to log an event just set the first parameter to `null`
-log(null, __filename,
+log.print(null, __filename,
   'Header for custom log message',
   'A more descriptive explanation for the reason I put a log here.');
 
 
 // change the reportLevel to index of 'Warning'
-log(null, __filename,
+log.print(null, __filename,
   'An unexpected event that could be a problem later',
   'A well deserved explanation as to what you suspect triggered this `Warning` log.',
   1 // <-------- index of `Warning` status
@@ -131,3 +131,23 @@ stack trace: null
 ```
 The only exception to this example out put is that it would actually be colored text for better contrast
 </br>
+
+### Version bumper
+This utility tool also features the version bumper, that will output to console the new version depending on 2 parameters: `version` and `type`. `version` is just a number (ex. `10.3.105`), and `type` may be one of three: `major`, `minor`, or `patch`. If you are unfamiliar with semantic versioning, take a look at [this site](http://semver.org/). You will still need to have this piece of code in your file:
+```javascript
+
+const log = require('log-me');
+
+```
+
+You will be able to use version bumper like so:
+```javascript
+
+log.bump('10.5.13', 'minor');
+
+```
+
+Having these parameters, console will print out this:
+```
+New version number is: 10.6.0
+```
