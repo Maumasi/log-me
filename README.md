@@ -1,11 +1,11 @@
 # log-me
 [ ![Codeship Status for Maumasi/log-me](https://app.codeship.com/projects/14dc3950-76fc-0134-4753-66e71ebe4071/status?branch=master)](https://app.codeship.com/projects/179752)
 </br>
-**log-me** is a simple logging tool you can use to log events to a log file within your project. You can think of this as a more powerful ` console.log() ` except you can turn this one off when you don't need logs riddled all over the place in the terminal.
+**log-me** is a simple logging tool you can use to log events to a console. You can think of this as a more powerful ` console.log() ` which gives more robust information about the events happening in the core functionality.
 </br>
 
 ### Important:
-This package was writen in ` node v6.7.0 `
+This package was written in ` node v6.7.0 `
 
 ### Notes:
 When reviewing this package documentation we're going to stage a couple basic outlines:
@@ -32,16 +32,6 @@ $ npm i --save log-me
 ```
 </br>
 
-After installing ` log-me ` you **MUST** create a new ` logs ` directory and ` log.txt ` inside of that new directory.
-```bash
-
-$ cd ROOT/
-$ mkdir logs
-$ touch logs/log.txt
-
-```
-___
-
 ## Usage
 
 ### Code examples
@@ -52,7 +42,7 @@ const log = require('log-me');
 
 ```
 
-When using your new tool, ` log `, there are a few parameters to play with:</br>
+When using your new tool, ` log.print `, there are a few parameters to play with:</br>
 Parameter position:
   1. **` error ` | [required]**: Capture an error stack trace commonly represented as ` err ` in node.
 
@@ -74,26 +64,26 @@ const log = require('log-me');
 
 
 // parameters
-log(err, filePath = __filename, customMessage = 'none', customDescription = 'none', reportLevel = 0);
+log.print(err, filePath = __filename, customMessage = 'none', customDescription = 'none', reportLevel = 0);
 
 
 // only log the stack trace
 danceMonkeyDance(err, dance) {
   // ... some code ...
   if (err) {
-    log(err, __filename);
+    log.print(err, __filename);
   }
 }
 
 
 // if there's no error to pass in but you want to log an event just set the first parameter to `null`
-log(null, __filename,
+log.print(null, __filename,
   'Header for custom log message',
   'A more descriptive explanation for the reason I put a log here.');
 
 
 // change the reportLevel to index of 'Warning'
-log(null, __filename,
+log.print(null, __filename,
   'An unexpected event that could be a problem later',
   'A well deserved explanation as to what you suspect triggered this `Warning` log.',
   1 // <-------- index of `Warning` status
@@ -103,7 +93,6 @@ log(null, __filename,
 ___
 
 ## DEBUG mode
-While ` log-me ` will continuously write to the ` ROOT/logs/log.txt ` file, but if you want see logs being output to the terminal then you'll have to turn on the **DEBUG** mode. To turn on **DEBUG** mode you'll have to set the DEBUG environment variable.
 
 The best way to do this is to set `DEBUG=true` in the terminal. If you have a server script that runs your App at the `ROOT/` directory level then you call just past in the following commands, assuming that you server script is called `server.js`.
 
@@ -142,3 +131,23 @@ stack trace: null
 ```
 The only exception to this example out put is that it would actually be colored text for better contrast
 </br>
+
+### Version bumper
+This utility tool also features the version bumper, that will output to console the new version depending on 2 parameters: `version` and `type`. `version` is just a number (ex. `10.3.105`), and `type` may be one of three: `major`, `minor`, or `patch`. If you are unfamiliar with semantic versioning, take a look at [this site](http://semver.org/). You will still need to have this piece of code in your file:
+```javascript
+
+const log = require('log-me');
+
+```
+
+You will be able to use version bumper like so:
+```javascript
+
+log.bump('10.5.13', 'minor');
+
+```
+
+Having these parameters, console will print out this:
+```
+New version number is: 10.6.0
+```
