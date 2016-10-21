@@ -110,4 +110,5 @@ exports.bump = (version, type) => {
       break;
   }
   console.log('New version number is: ' + splittedVersion[0] + '.' + splittedVersion[1] + '.' + splittedVersion[2]);
+  return splittedVersion[0] + '.' + splittedVersion[1] + '.' + splittedVersion[2];
 };
